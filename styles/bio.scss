@@ -1,67 +1,8 @@
+@use "./partials/fonts" as *;
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
 
-// @font-face {
-//   font-family: "AvenirNext";
-//   src: url("../assets/AvenirNextLTPro-Bold.otf") format("opentype");
-//   font-weight: 400;
-//   font-style: normal;
-// }
-@mixin font-face($font-family, $font-path, $font-weight, $font-style) {
-  @font-face {
-    font-family: "#{$font-family}";
-    src: url("#{$font-path}") format("woff2"); // Adjust the font format as needed
-    font-weight: #{$font-weight};
-    font-style: #{$font-style};
-  }
+body {
+  font-family: $font-stack;
+  font-weight: $regular;
 }
-
-p {
-  @include font-face(
-    "AvenirNext",
-    "../assets/AvenirNextLTPro-Bold.otf",
-    400,
-    normal
-  );
-}
-// assets/AvenirNextLTPro-Regular.otf
-// @font-face {
-//   font-family: "AvenirNext";
-//   src: url("../assets/AvenirNextLTPro-Regular.otf") format("opentype");
-//   src: url("../assets/AvenirNextLTPro.ttf") format("truetype");
-// }
-
-// @font-face {
-//   font-family: "AvenirNext";
-//   src: url("../assets/AvenirNextLTPro-Regular.otf") format("opentype");
-//   font-weight: 600;
-//   font-style: normal;
-// }
-
-// .reg {
-//   font-family: "AvenirNext";
-//   font-weight: 400;
-//   font-style: normal;
-// }
-
-// .demi {
-//   font-family: "AvenirNext";
-//   font-weight: 600;
-//   font-style: normal;
-// }
-
-// // .bold {
-// //   font-family: "AvenirNext";
-// //   font-weight: 700;
-// //   font-style: normal;
-// // }
-
-// .bold {
-//   @include font-face(
-//     AvenirNext,
-//     "../assets/AvenirNextLTPro-Regular.otf",
-//     "../assets/AvenirNextLTPro.ttf",
-//     normal,
-//     400
-//   );
-// }
