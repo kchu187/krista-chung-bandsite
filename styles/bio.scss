@@ -82,3 +82,12 @@ body {
     z-index: 3;
   }
 }
+
+.about {
+  &__title {
+  }
+
+  &__image {
+    height: 20rem;
+  }
+}
