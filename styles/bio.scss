@@ -21,6 +21,10 @@ body {
   color: $white;
   padding-top: 0.1rem;
 
+  @include tablet {
+    display: flex;
+  }
+
   &__logo {
     display: flex;
     font-weight: $regular;
@@ -29,6 +33,11 @@ body {
     margin: 0.9rem 1rem;
     padding-bottom: 0.3rem;
     justify-content: space-around;
+
+    @include tablet {
+      max-height: 1.25rem;
+      max-width: 7.5rem;
+    }
   }
 
   &__list {
@@ -117,6 +126,9 @@ body {
   &__sub-header {
     font-weight: $demi;
     color: $darkblack;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    margin-top: 1.5rem;
   }
 
   &__text-container {
@@ -126,7 +138,7 @@ body {
     margin-bottom: 1rem;
   }
   &__description {
-    font-size: 0.9rem;
+    font-size: 0.813rem;
     line-height: 1.125rem;
     font-weight: $regular;
     margin: 0rem;
@@ -139,6 +151,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 0.5rem;
+
   &__heading {
     @extend .subheader;
   }
@@ -151,6 +164,7 @@ body {
     width: 100%;
     margin-top: 0.5rem;
   }
+
   &__item--first {
     @extend .photo-gallery__item;
     margin-top: 0rem;
@@ -162,8 +176,41 @@ footer {
   font-weight: $regular;
   padding: 0rem 1rem;
   display: flex;
+  flex-direction: column;
+}
+.social-icons {
+  display: flex;
+  gap: 1.7rem;
 
-  .footer-header {
-    @extend .subheader;
+  &__image {
+    height: 1.5rem;
+    width: auto;
+    max-height: 3rem;
+  }
+}
+
+.footer-header {
+  @extend .subheader;
+}
+
+.footer-subsection {
+  font-size: 0.813rem;
+  white-space: pre-line;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.125rem;
+
+  &__title {
+    font-weight: $demi;
+    line-height: 1.125rem;
+  }
+
+  &__address {
+    font-style: normal;
+  }
+
+  &__email {
+    @extend .anchor-link;
+    margin: 1rem 0rem;
   }
 }
