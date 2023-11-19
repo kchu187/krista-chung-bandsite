@@ -279,6 +279,9 @@ footer {
   padding: 0rem 1rem;
   display: flex;
   flex-direction: column;
+  @include tablet {
+    padding: 0rem 2.25rem 1.5rem 2.25rem;
+  }
 }
 .social-icons {
   display: flex;
@@ -293,6 +296,19 @@ footer {
 
 .footer-header {
   @extend .section-header;
+  @include tablet {
+    margin: 0rem;
+  }
+}
+
+.footer-header-wrapper {
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    margin: 3rem 0rem 2.25rem 0rem;
+  }
 }
 
 .footer-subsection {
@@ -301,10 +317,24 @@ footer {
   display: flex;
   flex-direction: column;
   line-height: 1.125rem;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    gap: 0.825rem;
+  }
 
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
   &__title {
     font-weight: $demi;
     line-height: 1.125rem;
+    @include tablet {
+      line-height: 1.25rem;
+    }
   }
 
   &__address {
@@ -323,10 +353,19 @@ footer {
     font-size: 1.5rem;
     padding-bottom: unset;
     margin-top: 3rem;
+
+    @include tablet {
+      position: relative;
+      left: 83%;
+      top: -19.5rem;
+    }
   }
 
   &__copyright {
     font-weight: $regular;
     font-size: 0.66rem;
+    @include tablet {
+      font-size: 0.875rem;
+    }
   }
 }
