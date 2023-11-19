@@ -33,6 +33,11 @@ body {
     align-items: flex-end;
   }
 
+  @include desktop {
+    align-items: center;
+    padding: 0rem 9rem;
+  }
+
   &__logo {
     display: flex;
     font-weight: $regular;
@@ -48,6 +53,10 @@ body {
       padding: 0rem;
       margin: 1.5rem 2.25rem 2.25rem 2.25rem;
       font-size: 1.675rem;
+    }
+
+    @include desktop {
+      margin: 1.5rem 2.25rem 2.25rem 0rem;
     }
   }
 
@@ -73,6 +82,10 @@ body {
       padding: 1.6rem 0rem;
       font-size: 0.875rem;
       margin: 0rem 2rem;
+    }
+
+    @include desktop {
+      padding: 2.5rem 0rem;
     }
 
     &--highlighted {
@@ -106,6 +119,10 @@ body {
     background-position: 100% 100%;
   }
 
+  @include desktop {
+    height: 42rem;
+    background-position: 100% 36%;
+  }
   &::before {
     width: inherit;
     height: inherit;
@@ -129,6 +146,11 @@ body {
       padding-left: 2.25rem;
       top: 11.4rem;
     }
+
+    @include desktop {
+      padding-left: 9rem;
+      top: 16.4rem;
+    }
   }
 }
 
@@ -139,6 +161,9 @@ body {
     padding: 0rem 2.25rem;
   }
 
+  @include desktop {
+    padding: 0rem 9rem;
+  }
   &__title {
     @extend .section-header;
 
@@ -161,6 +186,11 @@ body {
       width: 34.5rem;
       max-height: 21rem;
     }
+
+    @include desktop {
+      width: 100%;
+      max-height: 27rem;
+    }
   }
 
   &__quote {
@@ -178,6 +208,10 @@ body {
   &__quote-body {
     @include tablet {
       margin-bottom: 0.5rem;
+    }
+
+    @include desktop {
+      width: 41rem;
     }
   }
   &__quoter {
@@ -213,6 +247,11 @@ body {
       flex-direction: row;
       margin-bottom: 2rem;
     }
+
+    @include desktop {
+      margin-bottom: 3rem;
+      gap: 1.5rem;
+    }
   }
   &__description {
     font-size: 0.813rem;
@@ -221,7 +260,12 @@ body {
     margin: 0rem;
 
     @include tablet {
+      line-height: 1.375rem;
       font-size: 0.875rem;
+    }
+    @include desktop {
+      line-height: 1.45rem;
+      width: 26rem;
     }
   }
 }
@@ -236,6 +280,10 @@ body {
   @include tablet {
     padding: 0.1rem 2.25rem;
     margin-bottom: 2.25rem;
+  }
+
+  @include desktop {
+    padding: 0.1rem 9rem;
   }
 
   &__heading {
@@ -261,6 +309,10 @@ body {
       width: 13.563rem;
       margin-top: 0rem;
     }
+    @include desktop {
+      height: 100%;
+      width: 19.5rem;
+    }
   }
 
   &__item--first {
@@ -281,6 +333,9 @@ footer {
   flex-direction: column;
   @include tablet {
     padding: 0rem 2.25rem 1.5rem 2.25rem;
+  }
+  @include desktop {
+    padding: 0rem 9rem 1.5rem 9rem;
   }
 }
 .social-icons {
@@ -326,7 +381,11 @@ footer {
   &__wrapper {
     @include tablet {
       display: flex;
-      justify-content: space-between;
+      gap: 3rem;
+    }
+    @include desktop {
+      display: flex;
+      gap: 7rem;
     }
   }
   &__title {
@@ -352,12 +411,17 @@ footer {
     justify-content: flex-start;
     font-size: 1.5rem;
     padding-bottom: unset;
-    margin-top: 3rem;
+    margin: 3rem 0rem 0.5rem;
 
     @include tablet {
       position: relative;
       left: 83%;
-      top: -19.5rem;
+      top: -18.5rem;
+      margin-top: 2rem;
+    }
+
+    @include desktop {
+      left: 88%;
     }
   }
 
