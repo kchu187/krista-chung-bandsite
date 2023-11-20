@@ -1,6 +1,11 @@
-@mixin font-face($family, $file-path, $style, $weight) {
-  font-family: #{$family};
-  src: url($file-path) format("opentype");
-  font-style: $style;
-  font-weight: $weight;
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
 }
