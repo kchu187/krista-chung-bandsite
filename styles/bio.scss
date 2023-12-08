@@ -276,7 +276,7 @@ body {
 }
 
 .photo-gallery {
-  padding: 0.1rem 1rem;
+  padding: 0.1rem 1rem 0.5rem;
   background-color: $alabaster;
   display: flex;
   flex-direction: column;
@@ -334,6 +334,19 @@ body {
     }
   }
 }
+
+.comments {
+  padding: 0.1rem 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__heading {
+    @extend .section-header;
+    margin-top: 0.1rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
 footer {
   background-color: $black;
   color: white;
