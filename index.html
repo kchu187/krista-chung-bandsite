@@ -7,6 +7,8 @@
     <title>Biography </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./styles/bio.css">
+    <script src="./scripts/index-page.js" async></script>
+
 </head>
 
 <body>
@@ -86,11 +88,14 @@
             <img class="photo-gallery__item" alt="Confetti falling into the crowd" src="./assets/Photo-gallery-9.jpg">
         </div>
     </section>
+
     <section class="comments">
         <h1 class="comments__heading"> Join the Conversation</h1>
-        <form class="comments__form">
-            <input type="text" name="itemInput" placeholder="item text" />
-            <button type="submit">add item</button>
+        <form id="comments__form">
+            <input type="text" name="nameInput" placeholder="Enter your name" />
+            <textarea name="commentInput" placeholder="Add a new comment"></textarea>
+            <!-- <button type="submit">Comment</button> -->
+            <input type="submit" value="add comment" />
         </form>
     </section>
 
