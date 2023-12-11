@@ -346,9 +346,49 @@ body {
     margin-bottom: 0.8rem;
   }
 
+  &__list {
+    list-style: none;
+    padding-left: 0rem;
+  }
+
+  &__item {
+    border-bottom: 0.063rem solid $mercury;
+    border-top: 0.063rem solid $mercury;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  &__subsection {
+    font-size: 0.813rem;
+    width: 45rem;
+  }
+  &__avatar {
+    border-radius: 100%;
+    width: 8rem;
+    height: 2.188rem;
+    background-color: $mercury;
+    position: relative;
+    top: 0.8rem;
+  }
+
+  &__name-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.813rem;
+  }
   &__name {
+    font-weight: $demi;
   }
   &__content {
+    margin-top: 0rem;
+    line-height: 1.125rem;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+
+  &__timestamp {
+    color: $silver;
   }
 }
 
