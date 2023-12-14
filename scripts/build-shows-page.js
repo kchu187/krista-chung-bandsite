@@ -1,6 +1,6 @@
 // Create an array containing all shows data
 
-const shows = [
+const showsData = [
   {
     date: "Mon Sept 06 2021",
     venue: "Ronald Lane",
@@ -8,4 +8,4 @@ const shows = [
   },
 ];
 
-console.log(shows[0]);
+console.log(showsData[0]);
