@@ -7,7 +7,7 @@
     <title> Shows </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../styles/shows.css">
-    <script src="./scripts/index-page.js" async></script>
+    <script src="../scripts/build-shows-page.js" async></script>
 
 </head>
 
@@ -15,84 +15,80 @@
     <nav class="navigation">
         <a href="../index.html" class="navigation__logo anchor-link"> BANDSITE </a>
         <ul class="navigation__list">
-            <li class="navigation__list-item navigation__list-item--highlighted"><a class="anchor-link--highlighted"
-                    href="../index.html">
+            <li class="navigation__list-item"><a class="anchor-link--highlighted" href="../index.html">
                     Biography </a> </li>
-            <li class="navigation__list-item"> <a class="anchor-link" href="./shows.html"> Shows </a></li>
+            <li class="navigation__list-item navigation__list-item--highlighted"> <a class="anchor-link"
+                    href="./shows.html"> Shows </a></li>
 
         </ul>
     </nav>
 
     <section class="hero">
-        <h1 class="hero__title"> The Bees Knees</h1>
+        <h1 class="hero__title">Queen of Yellow x
+            For The Stings</h1>
+        <iframe class="hero__soundcloud" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/256119442&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        <!-- <div
+            style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+            <a href="https://soundcloud.com/blink-182" title="blink-182" target="_blank"
+                style="color: #cccccc; text-decoration: none;">blink-182</a> · <a
+                href="https://soundcloud.com/blink-182/i-miss-you-album-version" title="I Miss You" target="_blank"
+                style="color: #cccccc; text-decoration: none;">I Miss You</a>
+        </div> -->
     </section>
 
-    <section class="about">
-        <h1 class="about__title"> About the Musicians </h1>
-        <div class="about__wrapper">
-            <img class="about__image" alt="Image of crowd in dark blue light at concert" src="./assets/band.jpg">
-            <div class="about__quote">
-                <p class=" about__quote-body">“We push each other to be the best. It’s not
-                    uncommon for one of us to say ‘this needs to be better, back to
-                    the drawing board’”
-                </p>
+    <section class="shows">
+        <h1 class="shows__title"> Shows</h1>
 
-                <p class="about__quoter">- Bryan Teddy, lead vocalist of The Bees
-                    Knees</p>
+    </section>
+
+    <footer>
+        <div class="footer-header-wrapper">
+            <h2 class="footer-header"> Get in Touch</h2>
+            <div class="social-icons">
+                <a class="social-icons__link" href="https://www.instagram.com/"> <img class="social-icons__image"
+                        src="../assets/icons/Icon-instagram.svg" alt="instagram icon"> </a>
+                <a class="social-icons__link" href="https://www.facebook.com/"> <img class="social-icons__image"
+                        src="../assets/icons/Icon-facebook.svg" alt="facebook icon"> </a>
+                <a class="social-icons__link" href="https://twitter.com/"> <img class="social-icons__image"
+                        src="../assets/icons/Icon-twitter.svg" alt="twitter-icon">
+                </a>
             </div>
-            <p class="about__sub-header">The Bees Knees</p>
+        </div>
+        <div class="footer-subsection__wrapper">
+            <div class="footer-subsection">
+                <p class="footer-subsection__title"> Cam Adams
+                    The Bees Knees Management </p>
+                <address class="footer-subsection__address"> 503 Broadway Penthouse,
+                    New York, NY 10012, USA
+                </address>
+                <a class="footer-subsection__email" href="mailto:info@thebeesknees.com">info@thebeesknees.com</a>
 
+            </div>
+            <div class="footer-subsection">
+                <p class="footer-subsection__title"> Pearl Gregg
+                    Limitless Artist Group </p>
+                <address class="footer-subsection__address"> Booking Agent for
+                    US / South America / Japan
+                </address>
+                <a class="footer-subsection__email"
+                    href="mailto:pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</a>
 
+            </div>
+            <div class="footer-subsection">
+                <p class="footer-subsection__title"> Carson Whyte
+                    ARCH Entertainment </p>
+                <address class="footer-subsection__address"> Booking Agent for
+                    UK / EU / AU
+                </address>
+                <a class="footer-subsection__email"
+                    href="mailto:cwhyte@archentertainment.com">cwhyte@archentertainment.com</a>
+            </div>
+        </div>
+        <div class="footer-subsection__logo"> BANDSITE </div>
+        <p class="footer-subsection__copyright">Copyright The Bees Knees © 2021 All Rights Reserved</p>
 
-            <footer>
-                <div class="footer-header-wrapper">
-                    <h2 class="footer-header"> Get in Touch</h2>
-                    <div class="social-icons">
-                        <a class="social-icons__link" href="https://www.instagram.com/"> <img
-                                class="social-icons__image" src="../assets/icons/Icon-instagram.svg"
-                                alt="instagram icon"> </a>
-                        <a class="social-icons__link" href="https://www.facebook.com/"> <img class="social-icons__image"
-                                src="../assets/icons/Icon-facebook.svg" alt="facebook icon"> </a>
-                        <a class="social-icons__link" href="https://twitter.com/"> <img class="social-icons__image"
-                                src="../assets/icons/Icon-twitter.svg" alt="twitter-icon">
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-subsection__wrapper">
-                    <div class="footer-subsection">
-                        <p class="footer-subsection__title"> Cam Adams
-                            The Bees Knees Management </p>
-                        <address class="footer-subsection__address"> 503 Broadway Penthouse,
-                            New York, NY 10012, USA
-                        </address>
-                        <a class="footer-subsection__email"
-                            href="mailto:info@thebeesknees.com">info@thebeesknees.com</a>
-
-                    </div>
-                    <div class="footer-subsection">
-                        <p class="footer-subsection__title"> Pearl Gregg
-                            Limitless Artist Group </p>
-                        <address class="footer-subsection__address"> Booking Agent for
-                            US / South America / Japan
-                        </address>
-                        <a class="footer-subsection__email"
-                            href="mailto:pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</a>
-
-                    </div>
-                    <div class="footer-subsection">
-                        <p class="footer-subsection__title"> Carson Whyte
-                            ARCH Entertainment </p>
-                        <address class="footer-subsection__address"> Booking Agent for
-                            UK / EU / AU
-                        </address>
-                        <a class="footer-subsection__email"
-                            href="mailto:cwhyte@archentertainment.com">cwhyte@archentertainment.com</a>
-                    </div>
-                </div>
-                <div class="footer-subsection__logo"> BANDSITE </div>
-                <p class="footer-subsection__copyright">Copyright The Bees Knees © 2021 All Rights Reserved</p>
-
-            </footer>
+    </footer>
 </body>
 
 </html>

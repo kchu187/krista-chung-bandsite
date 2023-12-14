@@ -3,85 +3,8 @@
 @use "./partials/mixins" as *;
 @use "./partials/base" as *;
 
-body {
-  font-family: $font-stack;
-  font-weight: $regular;
-  margin: 0rem;
-  color: $black;
-}
-
-.section-header {
-  font-size: 1.5rem;
-  font-weight: $demi;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-
-  @include tablet {
-    font-size: 2.25rem;
-    font-weight: $demi;
-    margin-top: 3rem;
-    margin-bottom: 2.25rem;
-  }
-}
-
-.anchor-link {
-  font-style: normal;
-  text-decoration: none;
-  color: $mercury;
-
-  &--highlighted {
-    @extend .anchor-link;
-    font-weight: $demi;
-  }
-}
-
 .hero {
-  position: relative;
-  height: 12rem;
-  width: 100%;
   background-image: url(../assets/images/hero-bio.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 82%;
-
-  @include tablet {
-    height: 28rem;
-    background-position: 100% 100%;
-  }
-
-  @include desktop {
-    height: 42rem;
-    background-position: 100% 36%;
-  }
-  &::before {
-    width: inherit;
-    height: inherit;
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: 2;
-    background-color: rgba(50, 50, 50, 0.5);
-  }
-
-  &__title {
-    padding-left: 1rem;
-    margin-top: 0rem;
-    position: relative;
-    top: 5rem;
-    color: $white;
-    font-weight: $demi;
-    z-index: 3;
-    @include tablet {
-      font-size: 3.75rem;
-      padding-left: 2.25rem;
-      top: 11.4rem;
-    }
-
-    @include desktop {
-      padding-left: 9rem;
-      top: 16.4rem;
-    }
-  }
 }
 
 .about {
@@ -94,6 +17,7 @@ body {
   @include desktop {
     padding: 0rem 9rem;
   }
+
   &__title {
     @extend .section-header;
 
