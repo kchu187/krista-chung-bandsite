@@ -18,3 +18,28 @@
     top: 4.5rem;
   }
 }
+
+.shows {
+  padding: 0rem 1rem;
+  &__title {
+    @extend .section-header;
+  }
+
+  &__container {
+  }
+
+  &__block {
+  }
+
+  &__header {
+    color: $silver;
+    font-weight: $demi;
+    font-size: 0.875rem;
+  }
+  &__data {
+    padding-top: 0rem;
+    &--date {
+      font-weight: $demi;
+    }
+  }
+}
