@@ -69,3 +69,9 @@ function renderShows() {
 }
 
 renderShows();
+
+//Function when clicking on show
+const showsBlock = document.querySelector(".shows__block");
+showsContainer.addEventListener("click", function () {
+  console.log("clicked!");
+});

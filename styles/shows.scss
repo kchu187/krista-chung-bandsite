@@ -29,6 +29,9 @@
   }
 
   &__block {
+    &:hover {
+      background-color: $mercury;
+    }
   }
 
   &__header {
@@ -38,6 +41,7 @@
   }
   &__data {
     padding-top: 0rem;
+
     &--date {
       font-weight: $demi;
     }
