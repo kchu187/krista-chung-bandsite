@@ -74,6 +74,12 @@ function renderShows() {
     locationData.classList.add("shows__data");
     locationData.innerText = show.location;
     showsArticle.appendChild(locationData);
+
+    // Create a button to buy tickets
+    const showsButton = document.createElement("a");
+    showsButton.classList.add("shows__button");
+    showsButton.innerText = "BUY TICKETS";
+    showsArticle.appendChild(showsButton);
   });
 }
 renderShows();
