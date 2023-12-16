@@ -29,15 +29,19 @@
   }
 
   &__block {
+    border-bottom: 0.063rem solid #e1e1e1;
+    border-top: 0.063rem solid #e1e1e1;
     &:hover {
       background-color: $mercury;
     }
   }
 
   &__header {
-    color: $silver;
-    font-weight: $demi;
-    font-size: 0.875rem;
+    &--mobile {
+      color: $silver;
+      font-weight: $demi;
+      font-size: 0.875rem;
+    }
   }
   &__data {
     padding-top: 0rem;

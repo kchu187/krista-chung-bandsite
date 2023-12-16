@@ -19,8 +19,8 @@ console.log("Hey :D");
 
 const showsHeaders = Object.keys(showsData[0]);
 
-//Create a media query for screen sizes above mobile
-const mobileSizing = window.matchMedia("(max-width:320px");
+// window.matchMedia("(max-width:768px");
+
 // Create a container for all Shows
 const showsContainer = document.createElement("div");
 showsContainer.classList.add("shows__container");
@@ -28,6 +28,7 @@ showsContainer.classList.add("shows__container");
 //Append this container to Shows section
 const showsSection = document.querySelector(".shows");
 showsSection.appendChild(showsContainer);
+//Create a media query for screen sizes above mobile
 
 // Create a function to render shows data into a table
 function renderShows() {
@@ -37,26 +38,24 @@ function renderShows() {
     showsArticle.classList.add("shows__block");
     showsContainer.appendChild(showsArticle);
 
-    //Create heading for date for mobile sizing
-    if (mobileSizing.matches) {
-      const dateHeader = document.createElement("h2");
-      dateHeader.classList.add("shows__header");
-      dateHeader.innerText = "DATE";
-      showsArticle.appendChild(dateHeader);
-    }
+    //Create headers for date
+    const dateHeader = document.createElement("h2");
+    dateHeader.classList.add("shows__header--mobile");
+    dateHeader.innerText = "DATE";
+    showsArticle.appendChild(dateHeader);
+
     //Create paragraph for date data
     const dateData = document.createElement("p");
     dateData.classList.add("shows__data--date");
     dateData.innerText = show.date;
     showsArticle.appendChild(dateData);
 
-    //Create heading for venue
-    if (mobileSizing.matches) {
-      const venueHeader = document.createElement("h2");
-      venueHeader.classList.add("shows__header");
-      venueHeader.innerText = "VENUE";
-      showsArticle.appendChild(venueHeader);
-    }
+    // Create heading for venue
+
+    const venueHeader = document.createElement("h2");
+    venueHeader.classList.add("shows__header--mobile");
+    venueHeader.innerText = "VENUE";
+    showsArticle.appendChild(venueHeader);
 
     //Create paragraph for venue data
     const venueData = document.createElement("p");
@@ -65,11 +64,36 @@ function renderShows() {
     showsArticle.appendChild(venueData);
 
     //Create heading for location
+    const locationHeader = document.createElement("h2");
+    locationHeader.classList.add("shows__header--mobile");
+    locationHeader.innerText = "LOCATION";
+    showsArticle.appendChild(locationHeader);
+
+    //Create paragraph for location data
+    const locationData = document.createElement("p");
+    locationData.classList.add("shows__data");
+    locationData.innerText = show.location;
+    showsArticle.appendChild(locationData);
   });
 }
-
 renderShows();
+// Create media query for mobile sizing
+function mobileHeaderDisplay() {
+  const mobileHeaders = document.querySelectorAll(".shows__header--mobile");
+  const mobileSizing = window.matchMedia("(min-width: 768px)");
 
+  mobileHeaders.forEach((header) => {
+    if (mobileSizing.matches) {
+      header.style.display = "none";
+    } else {
+      header.style.display = "block";
+    }
+  });
+}
+mobileHeaderDisplay();
+//
+//Add Event Listener everytime window is re-sized to check the screen size again by calling
+window.addEventListener("resize", mobileHeaderDisplay);
 //Function when clicking on show
 const showsBlock = document.querySelector(".shows__block");
 showsContainer.addEventListener("click", function () {
