@@ -94,12 +94,19 @@
 
     <section class="comments">
         <h1 class="comments__heading"> Join the Conversation</h1>
-        <form class="comments__form">
-            <input type="text" name="nameInput" placeholder="Enter your name" />
-            <textarea name="commentInput" placeholder="Add a new comment"></textarea>
-            <button type="submit">Comment</button>
-            <!-- <input type="submit" value="add comment" /> -->
-        </form>
+        <div class="comments__form-container">
+            <img class="comments__avatar--form" src="./assets/images/Mohan-muruge.jpg" alt="sideprofile of a man">
+
+            <form class="comments__form">
+                <h1 class="comments__form-title"> NAME </h1>
+                <input class="comments__form-name" type="text" name="nameInput" placeholder="Enter your name" />
+                <h1 class="comments__form-title"> COMMENT </h1>
+                <textarea class="comments__form-comment" name="commentInput" placeholder="Add a new comment"></textarea>
+                <button class="comments__form-button" type="submit">COMMENT</button>
+                <!-- <input type="submit" value="add comment" /> -->
+            </form>
+
+        </div>
         <ul class="comments__list">
             </div>
     </section>
