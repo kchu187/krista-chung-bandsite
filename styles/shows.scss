@@ -10,6 +10,10 @@
   &__title {
     overflow-wrap: break-word;
     width: 14rem;
+
+    @include tablet {
+      width: 36rem;
+    }
   }
 
   &__soundcloud {
@@ -20,10 +24,16 @@
 }
 
 .shows {
+  padding-bottom: 1rem;
+
   &__title {
     @extend .section-header;
     padding-left: 1rem;
     margin-top: 2rem;
+
+    @include tablet {
+      padding: 1rem 3rem;
+    }
   }
 
   &__container {
@@ -40,6 +50,20 @@
     &:first-child {
       border-top: unset;
     }
+
+    @include tablet {
+      margin: 0rem 1.25rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-top: unset;
+      padding: 1.5rem 1.125rem;
+
+      > * {
+        margin-bottom: unset;
+      }
+    }
   }
 
   &__header {
@@ -47,28 +71,41 @@
       color: $silver;
       font-weight: $demi;
       font-size: 0.875rem;
+      margin: 1rem 0rem 0.8rem;
     }
   }
   &__data {
     padding-top: 0rem;
     margin-top: 0;
 
+    @include tablet {
+      width: 8.2rem;
+    }
+
     &--date {
       font-weight: $demi;
-      margin-top: 0;
+      margin: 0 0 0.5rem;
+
+      @include tablet {
+        width: 9rem;
+      }
     }
   }
 
   &__button {
     background-color: #323232;
     color: white;
-    padding: 0.86rem 5rem;
-    margin: 1rem 0rem;
+    padding: 0.8rem 4.8rem;
     border-radius: 0.313rem;
-    font-size: 0.8rem;
-    width: 8rem;
+    width: 8.5rem;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: $demi;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      padding: 0.9rem 1.2rem;
+      font-size: 1rem;
+    }
   }
 }
