@@ -12,6 +12,11 @@
     height: 34rem;
   }
 
+  @include desktop {
+    height: 45rem;
+    background-position: 0 36%;
+  }
+
   &__subtitle {
     color: $white;
     position: relative;
@@ -20,10 +25,14 @@
     margin: 0 1rem;
 
     @include tablet {
-      margin: 0 2.25rem;
+      margin-left: 2.25rem;
       font-weight: $demi;
       font-size: 1.5rem;
       top: 4.5rem;
+    }
+    @include desktop {
+      margin-left: 9rem;
+      top: 12.5rem;
     }
   }
 
@@ -34,6 +43,10 @@
 
     @include tablet {
       width: 36rem;
+    }
+    @include desktop {
+      width: 29rem;
+      top: 14.5rem;
     }
   }
 
@@ -50,6 +63,10 @@
       left: -2.6rem;
       transform: scale(0.73);
     }
+    @include desktop {
+      top: 14.5rem;
+      left: 40.4rem;
+    }
   }
 }
 
@@ -60,6 +77,11 @@
     padding-bottom: 2.25rem;
   }
 
+  @include desktop {
+    display: flex;
+    justify-content: flex-start;
+    height: 44rem;
+  }
   &__title {
     @extend .section-header;
     padding-left: 1rem;
@@ -69,9 +91,18 @@
       padding: 1rem 2rem;
       margin-bottom: 1rem;
     }
+
+    @include desktop {
+      padding: 1rem 1rem 0rem 9rem;
+    }
   }
 
   &__container {
+    @include desktop {
+      padding-top: 6rem;
+      margin-left: 3rem;
+      padding-left: 2rem;
+    }
   }
   &__block {
     display: flex;
@@ -93,10 +124,15 @@
       justify-content: space-between;
       align-items: center;
       border-top: unset;
-      padding: 1.5rem 1.125rem;
+      padding: 1.125rem 1.125rem;
 
       > * {
         margin-bottom: unset;
+      }
+
+      @include desktop {
+        margin: unset;
+        gap: 3.5rem;
       }
     }
   }
@@ -107,6 +143,13 @@
     margin: 0rem 1.25rem;
     justify-content: flex-start;
     gap: 8.1rem;
+
+    @include desktop {
+      position: absolute;
+      left: 20.3rem;
+      top: 54rem;
+      gap: 12.1rem;
+    }
   }
 
   &__header {
@@ -141,6 +184,9 @@
 
       @include tablet {
         width: 9rem;
+      }
+      @include desktop {
+        padding-right: 5rem;
       }
     }
   }
