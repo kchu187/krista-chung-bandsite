@@ -119,8 +119,20 @@ mobileHeaderDisplay();
 //
 //Add Event Listener everytime window is re-sized to check the screen size again by calling
 window.addEventListener("resize", mobileHeaderDisplay);
-//Function when clicking on show
-const showsBlock = document.querySelector(".shows__block");
-showsContainer.addEventListener("click", function () {
-  console.log("clicked!");
+
+//Create function when clicking on show to apply selected state
+
+document.addEventListener("click", function (event) {
+  // If clicked element is a show, store it as a variable
+  if (event.target.classList.contains("shows__block")) {
+    const clickedBlock = event.target;
+
+    // Remove the "active" class from all blocks to avoid multi active states
+    document.querySelectorAll(".shows__block").forEach((block) => {
+      block.classList.remove("active");
+    });
+
+    // Add the "active" class to only the clicked block stored earlier
+    clickedBlock.classList.add("active");
+  }
 });
