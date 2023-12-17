@@ -35,7 +35,6 @@ const showsData = [
 
 console.log(showsData[1]);
 console.log(Object.keys(showsData[0]));
-console.log("Hey :D");
 
 const showsHeaders = Object.keys(showsData[0]);
 

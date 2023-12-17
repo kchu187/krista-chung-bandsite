@@ -8,12 +8,23 @@
   height: 20rem;
   background-position: 0%;
 
+  @include tablet {
+    height: 34rem;
+  }
+
   &__subtitle {
     color: $white;
     position: relative;
     top: 3rem;
     z-index: 5;
     margin: 0 1rem;
+
+    @include tablet {
+      margin: 0 2.25rem;
+      font-weight: $demi;
+      font-size: 1.5rem;
+      top: 4.5rem;
+    }
   }
 
   &__title {
@@ -33,11 +44,21 @@
     top: 8.5rem;
     left: -9rem;
     transform: scale(0.48, 0.5);
+
+    @include tablet {
+      top: 18.5rem;
+      left: -2.6rem;
+      transform: scale(0.73);
+    }
   }
 }
 
 .shows {
   padding-bottom: 1rem;
+
+  @include tablet {
+    padding-bottom: 2.25rem;
+  }
 
   &__title {
     @extend .section-header;
@@ -45,7 +66,8 @@
     margin-top: 2rem;
 
     @include tablet {
-      padding: 1rem 3rem;
+      padding: 1rem 2rem;
+      margin-bottom: 1rem;
     }
   }
 
@@ -79,7 +101,25 @@
     }
   }
 
+  &__header-container {
+    display: flex;
+    padding: 0rem 1.125rem;
+    margin: 0rem 1.25rem;
+    justify-content: flex-start;
+    gap: 8.1rem;
+  }
+
   &__header {
+    display: none;
+
+    @include tablet {
+      display: unset;
+      color: $silver;
+      font-weight: $demi;
+      font-size: 0.875rem;
+      margin: 1rem 0rem 0.8rem;
+      width: 2.8rem;
+    }
     &--mobile {
       color: $silver;
       font-weight: $demi;
