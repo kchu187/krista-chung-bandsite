@@ -188,6 +188,14 @@
   padding: 0.1rem 1rem;
   display: flex;
   flex-direction: column;
+  @include tablet {
+    padding: 0.1rem 2.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  @include desktop {
+    padding: 0.1rem 9rem;
+  }
 
   &__heading {
     @extend .section-header;
@@ -198,10 +206,25 @@
     display: flex;
     gap: 0.5rem;
     justify-content: space-between;
+    @include tablet {
+      justify-content: flex-start;
+      gap: 1rem;
+    }
+    @include desktop {
+      margin-left: 13rem;
+    }
   }
 
   &__form {
     padding: 0px 0 0.75rem 0.75rem;
+
+    @include tablet {
+      width: fill;
+    }
+
+    @include desktop {
+      width: unset;
+    }
   }
   &__form-title {
     color: $silver;
@@ -209,6 +232,9 @@
     font-size: 0.625rem;
     margin: 1rem 0rem 0.5rem;
     width: 2.8rem;
+    @include tablet {
+      font-size: 0.8rem;
+    }
   }
 
   &__form-field {
@@ -218,8 +244,17 @@
     border: solid 0.063rem $mercury;
     border-radius: 0.25rem;
     font-family: avenir;
-
     padding: 0.5rem;
+
+    @include tablet {
+      min-height: 1.5rem;
+      padding: 0.7rem;
+      width: 83%;
+    }
+
+    @include desktop {
+      width: 28.875rem;
+    }
 
     &--name {
       @extend .comments__form-field;
@@ -242,25 +277,16 @@
     text-align: center;
     font-family: Avenir;
     border: none;
+
+    @include tablet {
+      width: 26%;
+      position: relative;
+      left: 21.4rem;
+      padding: unset;
+      font-size: 0.9rem;
+    }
   }
 
-  &__list {
-    list-style: none;
-    padding-left: 0rem;
-  }
-
-  &__item {
-    border-bottom: 0.063rem solid $mercury;
-    border-top: 0.063rem solid $mercury;
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-  }
-
-  &__subsection {
-    font-size: 0.813rem;
-    width: 45rem;
-  }
   &__avatar {
     border-radius: 100%;
     width: 8rem;
@@ -269,12 +295,59 @@
     position: relative;
     top: 0.8rem;
 
+    @include tablet {
+      max-width: 3rem;
+      max-height: 3rem;
+      height: auto;
+    }
+
     &--form {
       @extend .comments__avatar;
       max-width: 2.25rem;
       max-height: 2.25rem;
       top: 2rem;
       object-fit: cover;
+
+      @include tablet {
+        max-width: 3rem;
+        max-height: 3rem;
+        height: auto;
+        margin-left: 4rem;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 0rem;
+
+    @include tablet {
+      margin-left: 4rem;
+    }
+    @include desktop {
+      margin-left: 17rem;
+    }
+  }
+
+  &__item {
+    border-bottom: 0.063rem solid $mercury;
+    border-top: 0.063rem solid $mercury;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    @include tablet {
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-start;
+      width: 35rem;
+    }
+  }
+
+  &__subsection {
+    font-size: 0.813rem;
+    width: 45rem;
+    @include tablet {
+      width: 30rem;
     }
   }
 
