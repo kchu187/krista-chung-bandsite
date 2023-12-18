@@ -245,7 +245,14 @@
     border-radius: 0.25rem;
     font-family: avenir;
     padding: 0.5rem;
+    outline: none;
 
+    &:invalid {
+      border: solid 0.063rem red;
+    }
+    &:focus {
+      border: solid 0.063rem $black;
+    }
     @include tablet {
       min-height: 1.5rem;
       padding: 0.7rem;

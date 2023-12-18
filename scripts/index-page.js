@@ -4,32 +4,27 @@ const commentForm = document.querySelector(".comments__form");
 const commentSection = document.querySelector(".comments__list");
 
 // Create an empty array to store comments
-const comments = [];
+const comments = [
+  {
+    name: "Connor Walton",
+    content:
+      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+    timestamp: "12/20/2020",
+  },
 
-//Create default comments
-const User1Comment = {
-  name: "Miles Acosta",
-  content:
-    "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  timestamp: "12/20/2020",
-};
-
-const User2Comment = {
-  name: "Emilie Beach",
-  content:
-    "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day",
-  timestamp: "12/20/2020",
-};
-
-const User3Comment = {
-  name: "Connor Walton",
-  content:
-    "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  timestamp: "12/20/2020",
-};
-
-//Push the existing/default comments into the Object array
-comments.push(User1Comment, User2Comment, User3Comment);
+  {
+    name: "Miles Acosta",
+    content:
+      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+    timestamp: "12/20/2020",
+  },
+  {
+    name: "Emilie Beach",
+    content:
+      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day",
+    timestamp: "12/20/2020",
+  },
+];
 
 //Create a loop to renderdefault comments onto page
 function renderInitComment() {
@@ -83,45 +78,49 @@ renderInitComment();
 //Add EventListener to add input values of HTML form into comments array
 commentForm.addEventListener("submit", (event) => {
   event.preventDefault();
+  //Clear all the comments
   comments.splice(0, comments.length);
+  //Create variables for form elements
   const commentName = event.target.nameInput.value;
   const commentContent = event.target.commentInput.value;
+  const commentNameField = document.querySelector(
+    ".comments__form-field--name"
+  );
+  const commentContentField = document.querySelector(
+    ".comments__form-field--comment"
+  );
 
+  // Variables for timestamp value
+  const date = new Date();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const formattedTime = `${hours}:${minutes}`;
+
+  //Add form validation for empty fields
   if (commentName !== "" && commentContent !== "") {
     comments.unshift({
       name: commentName,
       content: commentContent,
-      timestamp: Date.now(),
+      timestamp: formattedTime,
     });
-
+    // Remove red borders
+    commentNameField.style.removeProperty("border");
+    commentContentField.style.removeProperty("border");
     renderInitComment();
+
+    //Reset the form once submitted
     event.target.reset();
-  } else {
+
+    // Add additional validation checks for each blank field scenario
+  } else if (commentName == "" && commentContent == "") {
     alert("Please enter some text");
+    commentNameField.style.border = "solid 0.063rem red";
+    commentContentField.style.border = "solid 0.063rem red";
+  } else if (commentName == "") {
+    commentNameField.style.border = "solid 0.063rem red";
+    alert("Please enter a name!");
+  } else if (commentContent == "") {
+    commentContentField.style.border = "solid 0.063rem red";
+    alert("Please write a comment!");
   }
 });
-
-//Create a function to render new comments from the HTML form ---Can possibly deprecate)
-// function renderComments() {
-//   commentSection.innerHTML = "";
-//   comments.forEach((comment) => {
-//     const commentList = document.createElement("li");
-//     commentList.classList.add("comments__item");
-//     const commentNameTitle = document.createElement("p");
-//     commentNameTitle.innerText = comment.name;
-
-//     const commentContent = document.createElement("p");
-//     commentContent.innerText = comment.content;
-
-//     commentList.appendChild(commentNameTitle);
-//     commentList.appendChild(commentContent);
-//     commentSection.appendChild(commentList);
-//   });
-// }
-
-// const currentDate = new Date();
-// const timestamp = currentDate.getTime();
-
-// console.log(timestamp);
-
-// console.log(Date.now());
