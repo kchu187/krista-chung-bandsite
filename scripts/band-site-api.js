@@ -13,6 +13,11 @@ const getComments = async () => {
     //Store the Comments data from the API into a variable
     commentsData = resp.data;
 
+    //Sort each comment by timestamp, earliest comment on the bottom
+    commentsData.sort((date1, date2) => {
+      return date1.timestamp - date2.timestamp;
+    });
+
     const commentSection = document.querySelector(".comments__list");
     console.log(commentsData[1]);
 
@@ -34,11 +39,21 @@ const getComments = async () => {
       commentDefContent.classList.add("comments__content");
       commentDefContent.innerText = comment.comment;
 
+      const timestamp = comment.timestamp;
+      const localTimeStamp = (timestamp) => {
+        const localTime = new Date(timestamp);
+        const date = localTime.getDate();
+        const month = localTime.getMonth() + 1;
+
+        return month + "/" + date;
+      };
+
+      const formattedTime = localTimeStamp(timestamp);
+
       //Create new paragraph element with a class for timestamp
       const commentTimestamp = document.createElement("p");
       commentTimestamp.classList.add("comments__timestamp");
-      commentTimestamp.innerText = comment.timestamp;
-
+      commentTimestamp.innerText = formattedTime;
       //Create a container/subsection to separate avatar and comment contents
       const commentSubsection = document.createElement("div");
       commentSubsection.classList.add("comments__subsection");
@@ -94,13 +109,13 @@ commentForm.addEventListener("submit", (event) => {
         },
       }
     );
+    getComments();
   };
 
   if (commentName !== "" && commentContent !== "") {
     postComment();
     commentNameField.style.removeProperty("border");
     commentContentField.style.removeProperty("border");
-    getComments();
     //Reset the form once submitted
     event.target.reset();
 
@@ -117,20 +132,3 @@ commentForm.addEventListener("submit", (event) => {
     alert("Please write a comment!");
   }
 });
-
-// const postComment = async () => {
-//   await axios.post(
-//     "https://project-1-api.herokuapp.com/comments?api_key=${apiKey}",
-//     {
-//       name: "Krista",
-//       comment: "Flintstone",
-//     },
-//     {
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//     }
-//   );
-// };
-
-// postComment();
