@@ -123,16 +123,16 @@ window.addEventListener("resize", mobileHeaderDisplay);
 //Create function when clicking on show to apply selected state
 
 document.addEventListener("click", function (event) {
-  // If clicked element is a show, store it as a variable
-  if (event.target.classList.contains("shows__block")) {
-    const clickedBlock = event.target;
+  // If clicked element is a show/element within shows block, store it as a variable
+  const clickedBlock = event.target.closest(".shows__block");
 
-    // Remove the "active" class from all blocks to avoid multi active states
+  // Remove the "active" class from all blocks to avoid multi active states
+  if (clickedBlock) {
     document.querySelectorAll(".shows__block").forEach((block) => {
       block.classList.remove("active");
     });
 
-    // Add the "active" class to only the clicked block stored earlier
+    // Add the "active" class to only the clicked shows block stored earlier
     clickedBlock.classList.add("active");
   }
 });
