@@ -102,20 +102,21 @@ function renderShows() {
   });
 }
 renderShows();
-// Create media query for mobile sizing
-function mobileHeaderDisplay() {
-  const mobileHeaders = document.querySelectorAll(".shows__header--mobile");
-  const mobileSizing = window.matchMedia("(min-width: 768px)");
 
-  mobileHeaders.forEach((header) => {
-    if (mobileSizing.matches) {
-      header.style.display = "none";
-    } else {
-      header.style.display = "block";
-    }
-  });
-}
-mobileHeaderDisplay();
+// Create media query for mobile sizing
+// function mobileHeaderDisplay() {
+//   const mobileHeaders = document.querySelectorAll(".shows__header--mobile");
+//   const mobileSizing = window.matchMedia("(min-width: 768px)");
+
+//   mobileHeaders.forEach((header) => {
+//     if (mobileSizing.matches) {
+//       header.style.display = "none";
+//     } else {
+//       header.style.display = "block";
+//     }
+//   });
+// }
+// mobileHeaderDisplay();
 //
 //Add Event Listener everytime window is re-sized to check the screen size again by calling
 window.addEventListener("resize", mobileHeaderDisplay);
