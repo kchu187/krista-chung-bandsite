@@ -3,15 +3,16 @@ const url = "https://project-1-api.herokuapp.com/";
 const apiKey = "763ae118-ef81-46d0-b66d-44fb83b2cf2e";
 let commentsData = [];
 //Retrieve the 3 existing default comments from the API and display them
+
 const getComments = async () => {
   try {
-    const resp = await axios.get(
+    const commentsResp = await axios.get(
       "https://project-1-api.herokuapp.com/comments?api_key=${apiKey}"
     );
 
-    console.log(resp.data);
+    console.log(commentsResp.data);
     //Store the Comments data from the API into a variable
-    commentsData = resp.data;
+    commentsData = commentsResp.data;
 
     //Sort each comment by timestamp, earliest comment on the bottom
     commentsData.sort((date1, date2) => {
@@ -21,6 +22,8 @@ const getComments = async () => {
     const commentSection = document.querySelector(".comments__list");
     console.log(commentsData[1]);
 
+    // Clear the comment section first to avoid double-rendering
+    commentSection.innerHTML = "";
     // For each object in the array, create a new div containing name+comment elements
     commentsData.forEach((comment) => {
       const commentDefList = document.createElement("li");
@@ -39,13 +42,15 @@ const getComments = async () => {
       commentDefContent.classList.add("comments__content");
       commentDefContent.innerText = comment.comment;
 
+      //Create read-able timestamps
       const timestamp = comment.timestamp;
+
       const localTimeStamp = (timestamp) => {
         const localTime = new Date(timestamp);
         const date = localTime.getDate();
         const month = localTime.getMonth() + 1;
-
-        return month + "/" + date;
+        const year = localTime.getFullYear();
+        return month + "/" + date + "/" + year;
       };
 
       const formattedTime = localTimeStamp(timestamp);
@@ -76,15 +81,12 @@ const getComments = async () => {
   }
 };
 getComments();
-//Add EventListener to HTMl form to push into comments array via api
 
-// if (commentForm) {
+//Add EventListener to HTMl form to push into comments array via api
 const commentForm = document.querySelector(".comments__form");
+
 commentForm.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  //Clear all the comments
-  commentsData.splice(0, commentsData.length);
 
   //Create variables for form elements
   const commentName = event.target.nameInput.value;
@@ -118,7 +120,7 @@ commentForm.addEventListener("submit", (event) => {
     commentContentField.style.removeProperty("border");
     //Reset the form once submitted
     event.target.reset();
-
+    // getComments();
     // Add additional validation checks for each blank field scenario
   } else if (commentName == "" && commentContent == "") {
     alert("Please enter some text");
@@ -132,3 +134,19 @@ commentForm.addEventListener("submit", (event) => {
     alert("Please write a comment!");
   }
 });
+
+//getShows function to render show information via API
+
+const getShows = async () => {
+  const showsResp = await axios.get(
+    "https://project-1-api.herokuapp.com/showdates?api_key=${apiKey}"
+  );
+
+  console.log(showsResp.data);
+  try {
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+getShows();
