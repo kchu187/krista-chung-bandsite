@@ -1,3 +1,4 @@
+//Create a shows Container via DOM
 const showsContainer = document.createElement("div");
 showsContainer.classList.add("shows__container");
 
@@ -6,7 +7,6 @@ const showsSection = document.querySelector(".shows");
 showsSection.appendChild(showsContainer);
 
 //Create function when clicking on show to apply selected state
-
 document.addEventListener("click", function (event) {
   // If clicked element is a show/element within shows block, store it as a variable
   const clickedBlock = event.target.closest(".shows__block");
@@ -21,5 +21,5 @@ document.addEventListener("click", function (event) {
     clickedBlock.classList.add("active");
   }
 });
-// const myBandSiteApi = new BandSiteAPI("763ae118-ef81-46d0-b66d-44fb83b2cf2e");
+
 myBandSiteApi.getShows();

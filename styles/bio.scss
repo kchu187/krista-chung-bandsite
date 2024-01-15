@@ -385,18 +385,23 @@
     text-align: center;
     border: none;
     position: absolute;
-    left: 1.2rem;
+    left: 1rem;
     z-index: 5;
     margin-top: 18%;
     font-size: 0.7rem;
-
+    padding: 0rem 0.3rem;
+    cursor: default;
+    &:hover {
+      background-color: $black;
+      color: white;
+    }
     @include tablet {
-      left: 6.5rem;
-      margin-top: 9%;
+      left: 6.4rem;
+      margin-top: 8.8%;
     }
 
     @include desktop {
-      left: 26.1rem;
+      left: 26.2rem;
       margin-top: 5.5%;
     }
   }

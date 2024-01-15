@@ -9,7 +9,6 @@ class BandSiteAPI {
         this.baseURL + "/comments?api_key=" + this.apiKey
       );
 
-      console.log(commentsResp.data);
       //Store the Comments data from the API into a variable
       commentsData = commentsResp.data;
 
@@ -19,10 +18,10 @@ class BandSiteAPI {
       });
 
       const commentSection = document.querySelector(".comments__list");
-      console.log(commentsData[1]);
 
       // Clear the comment section first to avoid double-rendering
       commentSection.innerHTML = "";
+
       // For each object in the array, create a new div containing name+comment elements
       commentsData.forEach((comment) => {
         const commentDefList = document.createElement("li");
@@ -88,6 +87,7 @@ class BandSiteAPI {
     }
   };
 
+  //Method to post a comment via the API and render it on the Bio page
   postComment = async (commentName, commentContent) => {
     await axios.post(
       this.baseURL + "/comments?api_key=" + this.apiKey,
@@ -104,23 +104,20 @@ class BandSiteAPI {
     myBandSiteApi.getComments();
   };
 
+  //Method to Delete a comment
   deleteComment = async (id) => {
     await axios.delete(
       this.baseURL + "/comments/" + id + "/?api_key=" + this.apiKey
     );
     myBandSiteApi.getComments();
   };
+
   //Method for fetching shows data via API and displaying it
   getShows = async () => {
     const showsResp = await axios.get(
       this.baseURL + "/showdates?api_key=" + this.apiKey
     );
-
-    console.log(showsResp.data[1]);
-
     const showsData = showsResp.data;
-    console.log(Object.keys(showsData[0]));
-    console.log(showsData[0]);
     const showsHeaders = Object.keys(showsData[0]);
 
     showsData.forEach((show) => {
@@ -158,7 +155,6 @@ class BandSiteAPI {
       showsArticle.appendChild(dateData);
 
       // Create heading for venue
-
       const venueHeader = document.createElement("h2");
       venueHeader.classList.add("shows__header--mobile");
       venueHeader.innerText = "VENUE";
@@ -196,5 +192,5 @@ class BandSiteAPI {
   };
 }
 
-//Create instance for BandSiteAPI class
+//Create instance for BandSiteAPI class with registered API Key
 const myBandSiteApi = new BandSiteAPI("763ae118-ef81-46d0-b66d-44fb83b2cf2e");
