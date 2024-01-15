@@ -193,4 +193,4 @@ class BandSiteAPI {
 }
 
 //Create instance for BandSiteAPI class with registered API Key
-const myBandSiteApi = new BandSiteAPI("763ae118-ef81-46d0-b66d-44fb83b2cf2e");
+const myBandSiteApi = new BandSiteAPI("f2d34f1d-fc74-41b3-999d-7586ad00e6b0");
