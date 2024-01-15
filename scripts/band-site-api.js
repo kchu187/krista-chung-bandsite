@@ -58,6 +58,13 @@ class BandSiteAPI {
         const commentTimestamp = document.createElement("p");
         commentTimestamp.classList.add("comments__timestamp");
         commentTimestamp.innerText = formattedTime;
+
+        //Create a button element with a class for the delete button
+        const commentDeleteButton = document.createElement("p");
+        commentDeleteButton.classList.add("comments__delete");
+        commentDeleteButton.setAttribute("id", comment.id);
+        commentDeleteButton.innerText = "Delete";
+
         //Create a container/subsection to separate avatar and comment contents
         const commentSubsection = document.createElement("div");
         commentSubsection.classList.add("comments__subsection");
@@ -72,6 +79,7 @@ class BandSiteAPI {
         commentSubsection.appendChild(commentNameContainer);
         commentNameContainer.appendChild(commentDefName);
         commentNameContainer.appendChild(commentTimestamp);
+        commentNameContainer.appendChild(commentDeleteButton);
         commentSubsection.appendChild(commentDefContent);
         commentSection.prepend(commentDefList);
       });
@@ -96,6 +104,12 @@ class BandSiteAPI {
     myBandSiteApi.getComments();
   };
 
+  deleteComment = async (id) => {
+    await axios.delete(
+      this.baseURL + "/comments/" + id + "/?api_key=" + this.apiKey
+    );
+    myBandSiteApi.getComments();
+  };
   //Method for fetching shows data via API and displaying it
   getShows = async () => {
     const showsResp = await axios.get(
