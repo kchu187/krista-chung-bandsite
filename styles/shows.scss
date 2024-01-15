@@ -171,6 +171,10 @@
       font-weight: $demi;
       font-size: 0.875rem;
       margin: 1rem 0rem 0.8rem;
+
+      @include tablet {
+        display: none;
+      }
     }
   }
   &__data {

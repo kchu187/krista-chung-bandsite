@@ -232,6 +232,7 @@
     font-size: 0.625rem;
     margin: 1rem 0rem 0.5rem;
     width: 2.8rem;
+    display: block;
     @include tablet {
       font-size: 0.8rem;
     }
@@ -371,9 +372,38 @@
     line-height: 1.125rem;
     word-wrap: break-word;
     word-break: break-word;
+    margin-bottom: 2rem;
   }
 
   &__timestamp {
     color: $silver;
+  }
+
+  &__delete {
+    background-color: white;
+    color: $silver;
+    border-radius: 0.25rem;
+    text-align: center;
+    border: none;
+    position: absolute;
+    left: 1rem;
+    z-index: 5;
+    margin-top: 18%;
+    font-size: 0.7rem;
+    padding: 0rem 0.3rem;
+    cursor: default;
+    &:hover {
+      background-color: $black;
+      color: white;
+    }
+    @include tablet {
+      left: 6.4rem;
+      margin-top: 8.8%;
+    }
+
+    @include desktop {
+      left: 26.2rem;
+      margin-top: 5.5%;
+    }
   }
 }
